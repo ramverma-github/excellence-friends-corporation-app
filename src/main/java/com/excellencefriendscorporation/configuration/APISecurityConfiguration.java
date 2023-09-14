@@ -16,7 +16,7 @@ public class APISecurityConfiguration {
         http.authorizeHttpRequests((requests) -> {
             ((AuthorizeHttpRequestsConfigurer.AuthorizedUrl)requests.anyRequest()).authenticated();
         });
-        http.csrf().disable(); // added it to access POST api method also with basic authentication!!
+        http.csrf().disable(); // added it to access POST api method with basic authentication!!
         http.formLogin(Customizer.withDefaults());
         http.httpBasic(Customizer.withDefaults());
         return (SecurityFilterChain)http.build();
